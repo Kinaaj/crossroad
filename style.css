@@ -1,0 +1,128 @@
+/* Nastavení barev a proměnných */
+:root {
+  --bg-color: #232136; /* Hluboká tmavá fialová/šedá */
+  --card-bg: #2a273f; /* O něco světlejší pozadí karet */
+  --text-main: #e0def4; /* Jemná bílá */
+
+  /* Pastelová paleta (Rose Pine inspirovaná) */
+  --color-general: #eb6f92; /* Pastelová růžová/červená */
+  --color-school: #c4a7e7; /* Pastelová fialová */
+  --color-other: #9ccfd8; /* Pastelová tyrkysová/zelená */
+  --color-music: #f6c177; /* Pastelová zlatá/oranžová */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  /* Responzivní grid */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Nadpisy kategorií */
+h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid; /* Barva se dědí z barvy textu */
+  opacity: 0.9;
+}
+
+/* Základní styl odkazu */
+a {
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+  display: block; /* Aby byl klikatelný celý řádek */
+}
+
+a:hover {
+  transform: translateX(8px);
+  filter: brightness(1.2); /* Rozjasnění při najetí */
+}
+
+/* --- SPECIFICKÉ BARVY PRO KATEGORIE --- */
+
+/* General */
+.category.general h2 {
+  color: var(--color-general);
+  border-color: var(--color-general);
+}
+.category.general a:hover {
+  border-left-color: var(--color-general);
+  background-color: #eb6f9220;
+}
+.category.general a::before {
+  content: "# ";
+  color: var(--color-general);
+  opacity: 0.6;
+}
+
+/* Média */
+.category.school h2 {
+  color: var(--color-school);
+  border-color: var(--color-school);
+}
+.category.school a:hover {
+  border-left-color: var(--color-school);
+  background-color: #c4a7e720;
+}
+.category.school a::before {
+  content: "@ ";
+  color: var(--color-school);
+  opacity: 0.6;
+}
+
+/* Čtení */
+.category.other h2 {
+  color: var(--color-other);
+  border-color: var(--color-other);
+}
+.category.other a:hover {
+  border-left-color: var(--color-other);
+  background-color: #9ccfd820;
+}
+.category.other a::before {
+  content: "~ ";
+  color: var(--color-other);
+  opacity: 0.6;
+}
+
+/* Nástroje */
+.category.music h2 {
+  color: var(--color-music);
+  border-color: var(--color-music);
+}
+.category.music a:hover {
+  border-left-color: var(--color-music);
+  background-color: #f6c17720;
+}
+.category.music a::before {
+  content: "! ";
+  color: var(--color-music);
+  opacity: 0.6;
+}
