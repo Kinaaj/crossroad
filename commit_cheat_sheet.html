@@ -6,29 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git Commit Cheatsheet</title>
     <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="document.css">
+
     <style>
-        /* filename: cheatsheet.css */
-
-        /* Custom Header for the Git page */
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            border-bottom: 1px dashed var(--text-muted);
-            padding-bottom: 40px;
-        }
-
-        header h1 {
-            font-size: 3rem;
+        h2 {
+            margin-top: 2rem;
             color: var(--rose);
-        }
-
-        /* The code block box */
-        .syntax-box {
-            background: var(--card-bg);
-            padding: 15px 30px;
-            border-radius: 50px;
-            display: inline-block;
-            border: 1px solid var(--text-muted);
         }
     </style>
     <script src="theme.js" defer></script>
@@ -37,13 +20,29 @@
 <body>
 
     <div class="wrapper">
-        <h1>Commits Cheat-Sheet</h1>
-        <h2>The Anatomy of a Perfect Commit</h2>
-        <p></p>
+        <header>
+            <h1>Commit Cheat-Sheet</h1>
+        </header>
+
+        <p>The template for writing a semantic commit is (<b>note that seperator for these parts is the blank
+                line!</b>):</p>
+
+
+
+        <pre class="pretty-code" data-title="Plaintext">
+&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+
+&lt;body&gt;
+
+&lt;footer&gt;</pre>
+        <p>And here is the explanation for each part:</p>
+
+        <h2>&lt;type&gt; (Mandatory)</h2>
+        <p>The <b>&lt;type&gt;</b> is one keyword and it communicates the main intention of the change.</p>
         <table>
             <thead>
                 <tr>
-                    <th>Type</th>
+                    <th>Keywords</th>
                     <th>Description</th>
                     <th>SemVer</th>
                 </tr>
@@ -64,16 +63,98 @@
                     <td>Documentation changes</td>
                     <td>Patch</td>
                 </tr>
+                <tr>
+                    <td class="highlight">style</td>
+                    <td>Formatting, missing semi-colons, etc; no code change</td>
+                    <td>Patch</td>
+                </tr>
+                <tr>
+                    <td class="highlight">refactor</td>
+                    <td>Refactoring production code (no new features/fixes)</td>
+                    <td>Patch</td>
+                </tr>
+                <tr>
+                    <td class="highlight">perf</td>
+                    <td>Code change that improves performance</td>
+                    <td>Patch</td>
+                </tr>
+                <tr>
+                    <td class="highlight">test</td>
+                    <td>Adding missing tests, refactoring tests</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td class="highlight">chore</td>
+                    <td>Updating build tasks, package manager configs, etc</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td class="highlight">ci</td>
+                    <td>Changes to CI configuration files and scripts</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td class="highlight">revert</td>
+                    <td>Reverting a previous commit</td>
+                    <td>Patch</td>
+                </tr>
             </tbody>
         </table>
-        <p>This is paragraph</p>
-        <pre class="pretty-code" data-title="Plaintext">
-&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;sdf
-</pre>
 
+
+        <h2>&lt;scope&gt;</h2>
+        <p>A <b>&lt;scope&gt;</b> should be one word and may be provided to a commit’s type, to provide additional
+            contextual information and
+            is contained
+            within parenthesis.</p>
+        <pre class="pretty-code" data-title="Plaintext">
+feat(parser): add ability to parse arrays
+fix(api): handle empty response body</pre>
+
+        <h2>&lt;subject&gt; (Mandatory)</h2>
+        <p>The <b>&lt;subject&gt;</b> contains a succinct description of the change. Adhere to these rules:</p>
+        <ul>
+            <li>Use the <strong>imperative, present tense</strong>: "change" not "changed" nor "changes".</li>
+            <li>Don't capitalize the first letter.</li>
+            <li>No dot (.) at the end.</li>
+            <li>Limit to 50 characters.</li>
+        </ul>
+
+        <h2>&lt;body&gt;</h2>
+        <p>Paragraph of detailed explanation. Use the imperative, present tense. The body should include the motivation
+            for the change and contrast this
+            with previous behavior. It should contain max 72 characters per line.</p>
+
+        <h2>&lt;footer&gt;</h2>
+        <p>The <b>&lt;footer&gt;</b> is optional. It is used for meta-information about the commit, primarily for
+            tracking issues or indicating major breaking changes.</p>
+
+        <h3>1. Breaking Changes</h3>
+        <p>A commit that has a footer starting with <code>BREAKING CHANGE:</code>, or appends a <code>!</code> after the
+            type/scope, introduces a breaking API change (correlating with <strong>Major</strong> in Semantic
+            Versioning).</p>
+
+        <pre class="pretty-code" data-title="Breaking Change Example">
+feat(auth)!: remove support for Basic Auth
+
+BREAKING CHANGE: Basic Auth is no longer supported, please use Bearer tokens.</pre>
+
+        <h3>2. Referencing Issues</h3>
+        <p>If the commit closes a specific issue, listing it here will automatically close it in GitHub, GitLab, or
+            Jira.</p>
+
+        <pre class="pretty-code" data-title="Issue Tracking">
+Closes #123
+Fixes #405</pre>
+
+        <br />
+        <hr style="border: 0; border-top: 1px dashed var(--text-muted); margin: 40px 0;">
+
+        <p>To commit using this full format in the terminal:</p>
         <pre class="pretty-code" data-title="Bash">
-git commit -m "feat: add new login"
+git commit -m "feat: add new login" -m "This adds the ability..."
 </pre>
+    </div>
 </body>
 
 </html>

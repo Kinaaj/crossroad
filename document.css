@@ -1,0 +1,94 @@
+/* filename: document.css */
+
+/* --- READING LAYOUT --- */
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: block;
+}
+
+/* Custom Header for Docs */
+header {
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 1px dashed var(--text-muted);
+    padding-bottom: 25px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--rose);
+}
+
+/* --- TABLES --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--rose);
+    text-align: left;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--text-muted);
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(144, 140, 170, 0.2);
+    color: var(--text-main);
+}
+
+td.highlight {
+    color: var(--rose);
+    font-weight: bold;
+}
+
+tr:hover td {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- CODE BLOCKS --- */
+.code-block,
+.pretty-code {
+    background-color: #1f1d2e;
+    border-radius: 8px;
+    border: 1px solid rgba(144, 140, 170, 0.2);
+    overflow: hidden;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", monospace;
+    display: block;
+    white-space: pre;
+    /* Essential for pre tags */
+}
+
+/* The top bar (Plaintext | Icon) - Optional if your JS generates it */
+.code-header {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(144, 140, 170, 0.1);
+}
+
+/* Direct PRE styling */
+pre {
+    margin: 0;
+    padding: 15px;
+    overflow-x: auto;
+    line-height: 1.5;
+    color: var(--text-main);
+}
+
+code {
+    font-family: inherit;
+}

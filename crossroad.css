@@ -1,0 +1,108 @@
+/* filename: crossroad.css */
+
+/* --- LAYOUT GRID --- */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* --- COMPONENT: CARD --- */
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+    display: block;
+}
+
+.card:hover {
+    transform: translateX(8px);
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.card-title {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- COLOR THEMES (Specific to Columns) --- */
+
+/* Pink Theme */
+.accent-pink h2 {
+    color: var(--rose);
+    border-bottom: 2px solid var(--rose);
+}
+
+.accent-pink .card:hover {
+    border-left-color: var(--rose);
+    background-color: rgba(235, 111, 146, 0.1);
+}
+
+.accent-pink .card-title {
+    color: var(--rose);
+}
+
+/* Gold Theme */
+.accent-gold h2 {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+.accent-gold .card:hover {
+    border-left-color: var(--gold);
+    background-color: rgba(246, 193, 119, 0.1);
+}
+
+.accent-gold .card-title {
+    color: var(--gold);
+}
+
+/* Purple Theme */
+.accent-purple h2 {
+    color: var(--iris);
+    border-bottom: 2px solid var(--iris);
+}
+
+.accent-purple .card:hover {
+    border-left-color: var(--iris);
+    background-color: rgba(196, 167, 231, 0.1);
+}
+
+.accent-purple .card-title {
+    color: var(--iris);
+}
+
+/* Cyan Theme */
+.accent-cyan h2 {
+    color: var(--foam);
+    border-bottom: 2px solid var(--foam);
+}
+
+.accent-cyan .card:hover {
+    border-left-color: var(--foam);
+    background-color: rgba(156, 207, 216, 0.1);
+}
+
+.accent-cyan .card-title {
+    color: var(--foam);
+}

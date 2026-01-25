@@ -1,5 +1,4 @@
 /* filename: theme.css */
-
 :root {
     /* --- ROSE PINE PALETTE --- */
     --bg-color: #232136;
@@ -10,15 +9,10 @@
 
     /* Abstracted Colors */
     --rose: #eb6f92;
-    /* Pink */
     --gold: #f6c177;
-    /* Gold */
     --pine: #31748f;
-    /* Dark Cyan */
     --foam: #9ccfd8;
-    /* Light Cyan */
     --iris: #c4a7e7;
-    /* Purple */
 }
 
 /* --- BASE TYPOGRAPHY --- */
@@ -38,231 +32,32 @@ h3 {
     margin-top: 0;
 }
 
-/* --- LAYOUT TEXT SITE --- */
-/* NEW: Use this for text pages and documents */
-.wrapper {
-    max-width: 900px;
-    /* Narrower than dashboard for better reading */
-    margin: 0 auto;
-    /* Centers the box */
-    padding: 0 20px;
-    /* Prevents text touching the edge of mobile screens */
-    display: block;
-    /* Standard top-to-bottom flow */
-}
-
-/* --- LAYOUT GRID --- */
-/* Use this class to wrap your content */
-.container {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    /* Center the container */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    /* Removes gaps between cells */
-    background-color: var(--card-bg);
-    /* Use card background */
-    border-radius: 8px;
-    overflow: hidden;
-    /* Ensures corners stay rounded */
-    margin-top: 20px;
-}
-
-/* Header Styling */
-th {
-    background-color: rgba(0, 0, 0, 0.2);
-    color: var(--rose);
-    text-align: left;
-    padding: 15px;
-    font-size: 1.1rem;
-    border-bottom: 2px solid var(--text-muted);
-}
-
-/* Cell Styling */
-td {
-    padding: 15px;
-    border-bottom: 1px solid rgba(144, 140, 170, 0.2);
-    /* Low opacity border */
-    color: var(--text-main);
-}
-
-/* Highlight the first column (the command name) */
-td.highlight {
-    color: var(--rose);
-    font-weight: bold;
-}
-
-/* Hover effect on rows */
-tr:hover td {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-/* --- COMPONENT: CARD --- */
-/* Standard interactive card style */
-.card {
-    background-color: var(--card-bg);
-    color: var(--text-main);
+a {
     text-decoration: none;
-    /* In case it's an <a> tag */
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 4px solid transparent;
-    transition: all 0.2s ease;
-    display: block;
+    color: inherit;
 }
 
-.card:hover {
-    transform: translateX(8px);
-    filter: brightness(1.1);
+/* The Copy Button */
+.copy-btn {
+    background: transparent;
+    border: none;
     cursor: pointer;
-}
-
-.card-title {
-    display: block;
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-}
-
-.card-desc {
-    font-size: 0.9rem;
     color: var(--text-muted);
-}
-
-/* --- COLOR THEMES --- */
-/* Apply these classes to a .column to colorize all cards inside it */
-
-/* Pink Theme */
-.accent-pink h2 {
-    color: var(--rose);
-    border-bottom: 2px solid var(--rose);
-}
-
-.accent-pink .card:hover {
-    border-left-color: var(--rose);
-    background-color: rgba(235, 111, 146, 0.1);
-}
-
-.accent-pink .card-title {
-    color: var(--rose);
-}
-
-/* Gold Theme */
-.accent-gold h2 {
-    color: var(--gold);
-    border-bottom: 2px solid var(--gold);
-}
-
-.accent-gold .card:hover {
-    border-left-color: var(--gold);
-    background-color: rgba(246, 193, 119, 0.1);
-}
-
-.accent-gold .card-title {
-    color: var(--gold);
-}
-
-/* Purple Theme */
-.accent-purple h2 {
-    color: var(--iris);
-    border-bottom: 2px solid var(--iris);
-}
-
-.accent-purple .card:hover {
-    border-left-color: var(--iris);
-    background-color: rgba(196, 167, 231, 0.1);
-}
-
-.accent-purple .card-title {
-    color: var(--iris);
-}
-
-/* Cyan Theme */
-.accent-cyan h2 {
-    color: var(--foam);
-    border-bottom: 2px solid var(--foam);
-}
-
-.accent-cyan .card:hover {
-    border-left-color: var(--foam);
-    background-color: rgba(156, 207, 216, 0.1);
-}
-
-.accent-cyan .card-title {
-    color: var(--foam);
-}
-
-
-/* --- CODE BLOCKS --- */
-
-/* The outer container */
-.code-block {
-    background-color: #1f1d2e;
-    /* Slightly darker than card-bg for contrast */
-    border-radius: 8px;
-    border: 1px solid rgba(144, 140, 170, 0.2);
-    /* Subtle border */
-    overflow: hidden;
-    /* Ensures the header stays inside rounded corners */
-    margin: 20px 0;
-    font-family: "JetBrains Mono", monospace;
-}
-
-/* The top bar (Plaintext | Icon) */
-.code-header {
-    background-color: rgba(255, 255, 255, 0.03);
-    /* Very subtle lighten */
-    padding: 8px 15px;
+    padding: 4px;
+    border-radius: 4px;
     display: flex;
-    justify-content: space-between;
+    /* Centers the SVG */
     align-items: center;
-    border-bottom: 1px solid rgba(144, 140, 170, 0.1);
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
-.lang-label {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.copy-icon {
-    color: var(--text-muted);
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.copy-icon:hover {
-    opacity: 1;
+.copy-btn:hover {
     color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* The actual code area */
-pre {
-    margin: 0;
-    padding: 15px;
-    overflow-x: auto;
-    /* Adds scrollbar if line is too long */
-    line-height: 1.5;
-    color: var(--text-main);
-}
-
-code {
-    font-family: inherit;
-    /* Inherits JetBrains Mono */
+/* Optional: Slight pop effect when clicked */
+.copy-btn:active {
+    transform: scale(0.9);
 }
