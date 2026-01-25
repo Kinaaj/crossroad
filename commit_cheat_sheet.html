@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Commit Cheatsheet</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Small tweak to make the code snippets look better inside the specific CSS links */
+        a small {
+            display: block;
+            margin-top: 5px;
+            font-weight: normal;
+            opacity: 0.8;
+            font-size: 0.85em;
+        }
+
+        /* Tweak for code style text inside links */
+        code {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="category general">
+            <h2>Rules & Structure</h2>
+            <a href="#">
+                Atomic Commits
+                <small>One logical change per commit.</small>
+            </a>
+            <a href="#">
+                The "AND" Rule
+                <small>If you write "and" in the message, split the commit.</small>
+            </a>
+            <a href="#">
+                Imperative Mood
+                <small>Use "Add feature" not "Added feature".</small>
+            </a>
+            <a href="#">
+                Structure
+                <small><code>type: Subject</code><br>Body (optional)</small>
+            </a>
+        </div>
+
+        <div class="category school">
+            <h2>Commit Types</h2>
+            <a href="#">
+                feat
+                <small>New feature (e.g., login form)</small>
+            </a>
+            <a href="#">
+                fix
+                <small>Bug fix (e.g., fix crash)</small>
+            </a>
+            <a href="#">
+                docs
+                <small>Documentation only (README)</small>
+            </a>
+            <a href="#">
+                style
+                <small>Formatting, semi-colons (no code change)</small>
+            </a>
+            <a href="#">
+                refactor
+                <small>Rewrite code without changing behavior</small>
+            </a>
+            <a href="#">
+                test
+                <small>Adding or fixing tests/test data</small>
+            </a>
+        </div>
+
+        <div class="category other">
+            <h2>Examples</h2>
+            <a href="#">
+                Database
+                <small>feat: Define initial DB schema</small>
+            </a>
+            <a href="#">
+                Frontend
+                <small>style: Fix alignment in nav bar</small>
+            </a>
+            <a href="#">
+                Logic
+                <small>fix: Validate user email input</small>
+            </a>
+            <a href="#">
+                Cleanup
+                <small>chore: Remove unused images</small>
+            </a>
+            <a href="#">
+                ❌ BAD
+                <small>fixed bugs, wip, update css</small>
+            </a>
+        </div>
+
+        <div class="category music">
+            <h2>Workflow</h2>
+            <a href="#">
+                1. Status
+                <small><code>git status</code> - See what changed</small>
+            </a>
+            <a href="#">
+                2. Stage
+                <small><code>git add filename</code> - Pick files</small>
+            </a>
+            <a href="#">
+                3. Commit
+                <small><code>git commit -m "feat: ..."</code></small>
+            </a>
+            <a href="#">
+                4. Push
+                <small><code>git push</code> - Send to server</small>
+            </a>
+            <a href="#">
+                5. Undo (Soft)
+                <small><code>git reset --soft HEAD~1</code></small>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
